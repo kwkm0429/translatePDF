@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 import PyPDF2
 import docx
+import sys
+
+args = sys.argv
 
 # PDFファイルからテキストを抽出する関数
 def extract_text_from_pdf(pdf_path):
@@ -15,9 +18,9 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # PDFファイルからテキストを抽出する
-pdf_text = extract_text_from_pdf('file_pdf/hello.pdf')
+pdf_text = extract_text_from_pdf('file_pdf/'+args[1]+'.pdf')
 
 # テキストをWordファイルに書き込む
 doc = docx.Document()
 doc.add_paragraph(pdf_text)
-doc.save('file_docx/hello.docx')
+doc.save('file_docx/'+args[1]+'.docx')
