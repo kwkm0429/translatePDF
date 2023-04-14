@@ -31,12 +31,12 @@ def translate_text(text, source_language='en', target_language='ja'):
 """
 
 # PDFファイルからテキストを抽出する
-pdf_text = extract_text_from_pdf('file_pdf/sample1.pdf')
+pdf_text = extract_text_from_pdf('file_pdf/hello.pdf')
 
 # テキストをWordファイルに書き込む
 doc = docx.Document()
 doc.add_paragraph(pdf_text)
-doc.save('file_docx/output.docx')
+doc.save('file_docx/hello.docx')
 
 """
 # テキストを翻訳する
